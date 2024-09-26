@@ -1,0 +1,22 @@
+.home-container {
+    display: flex;
+    justify-content: space-between; /* Espacia los elementos en los extremos */
+    align-items: flex-start; /* Alinea los elementos al principio verticalmente */
+    height: 100vh; /* Altura de la pantalla completa */
+    background-color: white; /* Fondo blanco */
+    padding: 0px; /* Espaciado alrededor de los bordes */
+  }
+  
+  .cycling-title {
+    font-size: 48px; 
+  }
+  
+  .swimming-title {
+    font-size: 48px; 
+    margin: 0 auto; 
+  }
+  
+  .running-title {
+    font-size: 48px; 
+  }
+  
