@@ -1,0 +1,7 @@
+{
+    "email": "Correo", 
+    "password": "Contraseña",
+    "login": "Iniciar sesion",
+    "passRestric": "La contraseña debe tener al menos 8 caracteres",
+    "emailRestric": "Por favor ingrese un correo válido."
+}

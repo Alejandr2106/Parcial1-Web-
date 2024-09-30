@@ -2,7 +2,7 @@
 body {
   margin: 0;
   padding: 0;
-  background-image: url('C:\Users\Alejandro\triathlon-app\public\background.jpg'); 
+  background-image: url('../public/background.jpg'); 
   background-size: cover;
   background-position: center;
   height: 100vh;

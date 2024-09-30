@@ -2,36 +2,37 @@ import React, { useState } from 'react';
 import { BrowserRouter as Router, Route, Routes, useNavigate } from 'react-router-dom';
 import './App.css';
 import Home from './Home';
+import { FormattedMessage, useIntl} from 'react-intl';
 
 function Login() {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [errorMessage, setErrorMessage] = useState('');
   const navigate = useNavigate();
+  const intl = useIntl(); 
 
   const handleSubmit = (e) => {
     e.preventDefault();
     // Validación del correo y contraseña
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     if (!emailRegex.test(email)) {
-      setErrorMessage('Por favor ingrese un correo válido.');
+      setErrorMessage(intl.formatMessage({id: "emailRestric"}));
       return;
     }
     if (password.length < 8) {
-      setErrorMessage('La contraseña debe tener al menos 8 caracteres.');
+      setErrorMessage(intl.formatMessage({id: "passRestric"}));
       return;
     }
 
-    // Si pasa la validación, redirige a la página de Home
     navigate('/home');
   };
 
   return (
     <div className="login-container">
-      <h2>Login</h2>
+      <h2><FormattedMessage id = "login"/></h2>
       <form onSubmit={handleSubmit}>
         <div>
-          <label>Email:</label>
+          <label><FormattedMessage id = "email"/></label>
           <input
             type="email"
             value={email}
@@ -40,7 +41,7 @@ function Login() {
           />
         </div>
         <div>
-          <label>Password:</label>
+          <label><FormattedMessage id = "password"/></label>
           <input
             type="password"
             value={password}
@@ -49,7 +50,7 @@ function Login() {
           />
         </div>
         {errorMessage && <p style={{ color: 'red' }}>{errorMessage}</p>}
-        <button type="submit">Login</button>
+        <button type="submit"><FormattedMessage id = "login"/></button>
       </form>
     </div>
   );
